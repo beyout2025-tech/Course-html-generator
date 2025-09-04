@@ -1,4 +1,3 @@
-```html name=course-code-generator.html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -157,8 +156,8 @@
                 return;
             }
 
-            const features = featuresText.split('\n').map(item => `                <li data-aos="fade-right"><i class="fas fa-check-circle"></i> ${item.trim()}</li>`).join('\n');
-            const reviews = reviewsText.split('\n').map(item => `            <p>"${item.trim()}"</p>`).join('\n');
+            const features = featuresText.split('\n').filter(item => item.trim() !== '').map(item => `                <li data-aos="fade-right"><i class="fas fa-check-circle"></i> ${item.trim()}</li>`).join('\n');
+            const reviews = reviewsText.split('\n').filter(item => item.trim() !== '').map(item => `            <p>"${item.trim()}"</p>`).join('\n');
             
             const generatedCode = `<!DOCTYPE html>
 <html lang="ar" dir="rtl">
@@ -351,4 +350,3 @@ ${reviews}
     </script>
 </body>
 </html>
-```
